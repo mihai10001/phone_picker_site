@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Page Title</title>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+</head>
+
+<body>
+<div class="center">
+  <h1>Phones for everyone.</h1>
+</div>
+
+
+<div class="center">
+  <ul>
+    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+
+    <li><a href="">Search</a></li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Brands</a>
+      <div class="dropdown-content">
+        <a href="{{ url_for('variable', brand='all') }}">All</a>
+        <a href="{{ url_for('variable', brand='OnePlus') }}">OnePlus</a>
+        <a href="{{ url_for('variable', brand='Xiaomi') }}">Xiaomi</a>
+        <a href="{{ url_for('variable', brand='Essential') }}">Essential</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div class="center">
+  I chose to present a list of phones which in my opinion, 
+everyone should consider if they are looking to get a good deal. The smartphones market has gone up tremendously in the last years, 
+and instead of paying for an overpriced phone, I think people should consider the chinese alternatives as they have the same hardware
+capabilites but are much cheaper.
+
+</div>
+
+</body>
+</html>
