@@ -19,7 +19,7 @@
     <li><a href="#news">Search</a></li>
 
     <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn"></a>
+      <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
       <div class="dropdown-content">
         <a href="#">All</a>
         <a href="#">Link 2</a>
@@ -31,8 +31,9 @@
 
 
 <div class="center">
-  <h3>Dropdown Menu inside a Navigation Bar</h3>
-  <p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+  {% for entry in entries %}
+    <h2>{{ entry }}</h2>
+  {% endfor %}
 </div>
 
 </body>
