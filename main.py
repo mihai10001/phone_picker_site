@@ -9,12 +9,14 @@ collection = db['phone']
 
 @app.route("/")
 def home_page():
-    return render_template("home.html")
+    brands_list = collection.distinct('brand')
+    return render_template("home.html", brands=brands_list)
 
 
 @app.route("/<brand>")
 def variable(brand):
     result = []
+    brands_list = collection.distinct('brand')
 
     if brand == 'all':
         cursor = collection.find({})
@@ -23,4 +25,4 @@ def variable(brand):
 
     for document in cursor:
         result.append([document['date'], document['brand'], document['model'], document['rating'], document['proc'], document['price']])
-    return render_template("category.html", result=result)
+    return render_template("category.html", brands=brands_list, result=result)

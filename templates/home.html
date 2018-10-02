@@ -22,9 +22,9 @@
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
         <a href="{{ url_for('variable', brand='all') }}">All</a>
-        <a href="{{ url_for('variable', brand='OnePlus') }}">OnePlus</a>
-        <a href="{{ url_for('variable', brand='Xiaomi') }}">Xiaomi</a>
-        <a href="{{ url_for('variable', brand='Essential') }}">Essential</a>
+         {% for item in brands %}
+          <a href="{{ url_for('variable', brand=item) }}">{{ item }}</a>
+         {% endfor %}
       </div>
     </li>
   </ul>
