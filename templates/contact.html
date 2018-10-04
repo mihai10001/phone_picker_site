@@ -36,28 +36,47 @@
 
     <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
 
-    <form method="POST">
-      <input type="text" class="search" name="search" placeholder="Search..">
-    </form>
   </ul>
 </div>
 
 <!-- THIS IS THE CONTENT -->
 <br/>
 <div class="center border">
-  <p style="text-align: center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </p>
-  <br/><br/>
-  <p class="content-focus" style="text-align: center">
-      I chose to present a list of phones which in my opinion, everyone should consider if they are looking to get a good deal.
-      The smartphones market has gone up tremendously in the last years,
-      and instead of paying for an overpriced phone, I think people should consider the chinese alternatives as they have the same hardware
-      capabilites but are much cheaper.
-  </p>
+  <div style="width: 80%; margin:0 auto;">
+    <h3>Contact Form</h3>
+    <form method="POST">
+      <label for="fname">First Name</label><br/>
+      <input type="text" name="firstname" style="margin: 10px" placeholder="Your name.."><br/>
+
+      <label for="lname">Last Name</label><br/>
+      <input type="text" name="lastname" style="margin: 10px" placeholder="Your last name.."><br/>
+
+      <label for="subject">Comments</label><br/>
+      <input type="text" name="comment" style="height: 60px; margin: 10px" placeholder="Your comment.."><br/>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+<div class="center border">
+  <div style="width: 80%; margin:0 auto;">
+    <h3>Comments</h3>
+      <table id="simple" style="width:100%">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Comment</th>
+        </tr>
+        {% for item in result %}
+        <tr>
+          <td>{{ item[0] }}</td>
+          <td>{{ item[1] }}</td>
+          <td>{{ item[2] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+  </div>
 </div>
 
 </body>
