@@ -40,44 +40,33 @@
 </div>
 
 <!-- THIS IS THE CONTENT -->
-<br/>
-<div class="center border" style="height: 420px">
-  <div class="content-split">uiiiiiii</div>
-  <div class="content-split">
-    <h3>Leave an opinion!</h3>
+<hr>
+<p class="center border" style="text-align: center">If you consider anything omitted, please complete the form below.<br/> After the algorithm checks for consistency, it will be added.</p>
+<hr>
+
+<div class="center border">
+  <div class="content-focus">
     <form method="POST">
-      <label for="fname">First Name</label><br/>
-      <input type="text" name="firstname" style="margin: 10px" placeholder="Your name.."><br/>
+      <label for="fname">Date</label><br/>
+      <input type="text" name="date" style="margin: 10px" placeholder="..."><br/>
 
-      <label for="lname">Last Name</label><br/>
-      <input type="text" name="lastname" style="margin: 10px" placeholder="Your name.."><br/>
+      <label for="lname">Brand</label><br/>
+      <input type="text" name="brand" style="margin: 10px" placeholder="..."><br/>
 
-      <label for="subject">Comments</label><br/>
-      <textarea name="comment" style="margin: 10px; height: 50px;" placeholder="Enter text here.."></textarea><br/>
+      <label for="lname">Model</label><br/>
+      <input type="text" name="model" style="margin: 10px" placeholder="..."><br/>
+
+      <label for="lname">Rating</label><br/>
+      <input type="text" name="rating" style="margin: 10px" placeholder="..."><br/>
+
+      <label for="lname">Processor</label><br/>
+      <input type="text" name="proc" style="margin: 10px" placeholder="..."><br/>
+
+      <label for="lname">Price</label><br/>
+      <input type="text" name="price" style="margin: 10px" placeholder="..."><br/>
 
       <button class="btn btnred" type="submit" value="Submit">Submit</button>
     </form>
-  </div>
-</div>
-
-<div class="center border">
-  <div class="center2">
-    <h3>Comments can be found below!</h3>
-      <img src="{{ url_for('static', filename='down.png') }}" class="center-img" alt="" align="middle">
-      <table class="simple">
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Comment</th>
-        </tr>
-        {% for item in result %}
-        <tr>
-          <td>{{ item[0] }}</td>
-          <td>{{ item[1] }}</td>
-          <td>{{ item[2] }}</td>
-        </tr>
-        {% endfor %}
-      </table>
   </div>
 </div>
 

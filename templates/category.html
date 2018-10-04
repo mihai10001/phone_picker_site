@@ -35,7 +35,7 @@
       </div>
     </li>
 
-    <li><a href="{{ url_for('home_page') }}">Propose</a></li>
+    <li><a href="{{ url_for('propose_page') }}">Propose</a></li>
 
     <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
 
@@ -64,7 +64,6 @@
 <script>
 $(document).ready( function () {
     $('#table_id').DataTable( {
-
       "data":{{ result|tojson }}
   } );
 } );
