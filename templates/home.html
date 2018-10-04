@@ -7,36 +7,48 @@
 </head>
 
 <body>
-<div class="center">
-  <h1>Phones for everyone.</h1>
+<!-- THIS IS THE HEADER -->
+<div class="center border">
+  <h1 class="center border-other">Phones for everyone.</h1>
 </div>
 
-
-<div class="center">
+<!-- THIS IS THE MENU -->
+<br/>
+<div class="center border">
   <ul>
     <li><a href="{{ url_for('home_page') }}">Home</a></li>
-
-    <li><a href="">Search</a></li>
 
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
-        <a href="{{ url_for('variable', brand='all') }}">All</a>
+        <a href="{{ url_for('variable_page', brand='all') }}">All</a>
          {% for item in brands %}
-          <a href="{{ url_for('variable', brand=item) }}">{{ item }}</a>
+          <a href="{{ url_for('variable_page', brand=item) }}">{{ item }}</a>
          {% endfor %}
       </div>
     </li>
+    <form method="POST">
+      <input type="text" name="search" placeholder="Search..">
+    </form>
   </ul>
 </div>
 
-
-<div class="center">
-  I chose to present a list of phones which in my opinion, 
-everyone should consider if they are looking to get a good deal. The smartphones market has gone up tremendously in the last years, 
-and instead of paying for an overpriced phone, I think people should consider the chinese alternatives as they have the same hardware
-capabilites but are much cheaper.
-
+<!-- THIS IS THE CONTENT -->
+<br/>
+<div class="center border">
+  <p style="text-align: center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </p>
+  <br/><br/>
+  <p class="content-focus" style="text-align: center">
+      I chose to present a list of phones which in my opinion, everyone should consider if they are looking to get a good deal.
+      The smartphones market has gone up tremendously in the last years, 
+      and instead of paying for an overpriced phone, I think people should consider the chinese alternatives as they have the same hardware
+      capabilites but are much cheaper.
+  </p>
 </div>
 
 </body>
