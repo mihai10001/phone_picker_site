@@ -4,6 +4,9 @@
 <head>
 <title>Page Title</title>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
@@ -40,35 +43,31 @@
 </div>
 
 <!-- THIS IS THE CONTENT -->
-<hr>
-<p class="center border" style="text-align: center">If you consider anything omitted, please complete the form below.<br/> After the algorithm checks for consistency, it will be added</p>
-<hr>
-
+<br/>
 <div class="center border">
-  <div class="content-focus">
-    <form method="POST">
-      <label for="fname">Date</label><br/>
-      <input type="text" name="date" style="margin: 10px" placeholder="..."><br/>
-
-      <label for="lname">Brand</label><br/>
-      <input type="text" name="brand" style="margin: 10px" placeholder="..."><br/>
-
-      <label for="lname">Model</label><br/>
-      <input type="text" name="model" style="margin: 10px" placeholder="..."><br/>
-
-      <label for="lname">Rating</label><br/>
-      <input type="text" name="rating" style="margin: 10px" placeholder="..."><br/>
-
-      <label for="lname">Processor</label><br/>
-      <input type="text" name="proc" style="margin: 10px" placeholder="..."><br/>
-
-      <label for="lname">Price</label><br/>
-      <input type="text" name="price" style="margin: 10px" placeholder="..."><br/>
-
-      <button class="btn btnred" type="submit" value="Submit">Submit</button>
-    </form>
-  </div>
+  <table id="table_id" class="display">
+      <thead>
+          <tr>
+              <th>Release date</th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Rating</th>
+              <th>Processor</th>
+              <th>Price</th>
+          </tr>
+      </thead>
+  </table>
 </div>
 
 </body>
+
+<script>
+$(document).ready( function () {
+    $('#table_id').DataTable( {
+      "data":{{ trusted|tojson }},
+      "order": [[ 0, "desc" ]]
+  } );
+} );
+
+</script>
 </html>

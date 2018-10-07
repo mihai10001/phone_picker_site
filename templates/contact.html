@@ -15,14 +15,14 @@
 <!-- THIS IS THE MENU -->
 <br/>
 <div class="center border">
-  <ul>
-    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+  <ul class="list">
+    <li class="list-item"><a href="{{ url_for('home_page') }}">Home</a></li>
 
-    <li><a href="{{ url_for('home_page') }}">Guide</a></li>
+    <li class="list-item"><a href="{{ url_for('guide_page') }}">Guide</a></li>
 
-    <li><a href="{{ url_for('home_page') }}">Deals</a></li>
+    <li class="list-item"><a href="{{ url_for('deals_page') }}">Deals</a></li>
 
-    <li class="dropdown">
+    <li class="list-item dropdown">
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
         <a href="{{ url_for('variable_page', brand='all') }}">All</a>
@@ -32,9 +32,9 @@
       </div>
     </li>
 
-    <li><a href="{{ url_for('propose_page') }}">Propose</a></li>
+    <li class="list-item"><a href="{{ url_for('propose_page') }}">Propose</a></li>
 
-    <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
+    <li class="list-item"><a href="{{ url_for('contact_page') }}">Contact</a></li>
 
   </ul>
 </div>
@@ -63,7 +63,7 @@
 <div class="center border">
   <div class="center2">
     <h3>Comments can be found below!</h3>
-      <img src="{{ url_for('static', filename='down.png') }}" class="center-img" alt="" align="middle">
+      <img src="{{ url_for('static', filename='down.png') }}" class="center-img-small" alt="" align="middle">
       <table class="simple">
         <tr>
           <th>First Name</th>

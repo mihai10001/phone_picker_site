@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Page Title</title>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+</head>
+
+<body>
+<!-- THIS IS THE HEADER -->
+<div class="center border">
+  <h1 class="center border-other">Phones for everyone.</h1>
+</div>
+
+<!-- THIS IS THE MENU -->
+<br/>
+<div class="center border">
+  <ul class="list">
+    <li class="list-item"><a href="{{ url_for('home_page') }}">Home</a></li>
+
+    <li class="list-item"><a href="{{ url_for('guide_page') }}">Guide</a></li>
+
+    <li class="list-item"><a href="{{ url_for('deals_page') }}">Deals</a></li>
+
+    <li class="list-item dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Brands</a>
+      <div class="dropdown-content">
+        <a href="{{ url_for('variable_page', brand='all') }}">All</a>
+         {% for item in brands %}
+          <a href="{{ url_for('variable_page', brand=item) }}">{{ item }}</a>
+         {% endfor %}
+      </div>
+    </li>
+
+    <li class="list-item"><a href="{{ url_for('propose_page') }}">Propose</a></li>
+
+    <li class="list-item"><a href="{{ url_for('contact_page') }}">Contact</a></li>
+
+  </ul>
+</div>
+
+<!-- THIS IS THE CONTENT -->
+<hr>
+<p class="center border" style="text-align: center">A comprehensive guide for you</p>
+<hr>
+
+<div class="center border" style="height: 460px">
+  <div class="content-split" style="font-size: 18px;"><br/>There are some key aspects in choosing a phone, which everyone should consider before buying one.<br/><br/>
+    Of course, the first things in mind are the user preferences and the actual purpose of the phone (business, outdoor resistant, etc.)<br/><br/>
+    I have created a list of those things, in the right-hand side of the screen, <span style="color: red;">from most important to least important</span>.<br/><br/>In my opinion,
+    the price should be the last, considering how powerful some cheap phones can get.
+  </div>
+  <div class="content-split">
+    <h3>What to consider:</h3>
+      <ul class="simple-list">
+        <li>Build Quality</li>
+        <li>Operating system and support<a href="https://www.xda-developers.com/" style=" text-decoration: none; color: red;">[XDA]</a></li>
+        <li>Hardware design and features:</li>
+          <ul>
+            <li>Processor</li>
+            <li>RAM</li>
+            <li>Camera</li>
+            <li>Audio Quality</li>
+            <li>Battery</li>
+            <li>Storage</li>
+          </ul>
+        <li>Size</li>
+        <li>Price</li>
+      </ul>
+  </div>
+</div>
+
+<hr>
+<p class="center border" style="text-align: center">Majority is fine, but don't dive head first, you'll be surprised</p>
+<hr>
+
+<div class="center border">
+  <div class="center2">
+    <p class="content-text">
+      Below you will find an image with the market share of the phones around us. Even though price, as said before, shouldn't impact your decision, these are the most bought phones.
+      If your income is steady and you don't really care how much you are going to spend on your phone, there are some safe bets for you.For example, you're not going to fail with the latest Samsung
+      or Apple devices, usually they have all the things needed in your day to day life. But of course, not everybody has 700-1000$ around to spend.<br/>
+    </p>
+    <img src="{{ url_for('static', filename='market.png') }}" class="center-img" alt="" align="middle">
+  </div>
+</div>
+
+
+
+</body>
+</html>

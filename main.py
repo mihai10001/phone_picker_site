@@ -8,10 +8,35 @@ collection = db['phone']
 collection2 = db['comment']
 
 
+# ~~~~~~~ HOME PAGE ~~~~~~~
+
 @app.route('/')
 def home_page():
     brands_list = collection.distinct('brand')
     return render_template('home.html', brands=brands_list)
+
+
+# ~~~~~~~ GUIDE PAGE ~~~~~~~
+
+@app.route('/guide')
+def guide_page():
+    brands_list = collection.distinct('brand')
+    return render_template('guide.html', brands=brands_list)
+
+
+# ~~~~~~~ DEALS PAGE ~~~~~~~
+
+@app.route('/filter')
+def deals_page():
+    trusted_result = []
+    brands_list = collection.distinct('brand')
+    trusted_vendors = ["Samsung", "Apple", "OnePlus", "Nokia", "Huaewi", "Xiaomi", "Google", "LG", "HTC", "Blackberry", "Sony"]
+    cursor = collection.find({"title": {"$in": trusted_vendors}})
+
+    for document in cursor:
+        trusted_result.append([document['date'], document['brand'], document['model'], document['rating'], document['proc'], document['price']])
+
+    return render_template('filter.html', brands=brands_list, trusted=trusted_result)
 
 
 # ~~~~~~~ VARIABLE PAGES [SEARCHBOX + BRANDS] ~~~~~~~
