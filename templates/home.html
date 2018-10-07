@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Page Title</title>
+<title>Home Page</title>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
 </head>
 
@@ -17,11 +17,8 @@
 <div class="center border">
   <ul class="list">
     <li class="list-item"><a href="{{ url_for('home_page') }}">Home</a></li>
-
     <li class="list-item"><a href="{{ url_for('guide_page') }}">Guide</a></li>
-
     <li class="list-item"><a href="{{ url_for('deals_page') }}">Deals</a></li>
-
     <li class="list-item dropdown">
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
@@ -31,9 +28,7 @@
          {% endfor %}
       </div>
     </li>
-
     <li class="list-item"><a href="{{ url_for('propose_page') }}">Propose</a></li>
-
     <li class="list-item"><a href="{{ url_for('contact_page') }}">Contact</a></li>
 
     <form method="POST">
@@ -77,12 +72,10 @@
 
   <div class="center2">
     <h4 class="content-text">
-      If you want to see how I created this site, and the backend behind it, hop onto this link and visit <a href="www.github.com/mihai10001/web_app" style="color: red">my Github page.</a>
+      If you want to see how I created this site, and the backend behind it, hop onto this link and visit <a href="http://www.github.com/mihai10001/web_app" style="color: red">my Github page.</a> Also,
+      <a href="http://www.github.com/mihai10001/scrap" style="color: blue">here</a> is the link to the scraper I created to populate my database.
     </h4>
 </div>
-
-
-
 
 </body>
 </html>

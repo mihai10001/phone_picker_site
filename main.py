@@ -32,7 +32,7 @@ def deals_page():
     trusted_cheap_result = []
     brands_list = collection.distinct('brand')
     trusted_vendors = ["Samsung", "Apple", "OnePlus", "Nokia", "Huawei", "Xiaomi", "Google", "LG", "HTC", "Blackberry", "Sony", "OPPO"]
-    cursor = collection.find({"brand": {"$in": trusted_vendors}})
+    cursor = collection.find({'brand': {'$in': trusted_vendors}})
 
     for document in cursor:
         doc_atr = [document['date'], document['brand'], document['model'], document['rating'], document['proc'], document['price']]
@@ -58,7 +58,7 @@ def search_page():
         if any(search_text in x for x in doc_lower):
             result.append(doc_atr)
 
-    return render_template('category.html', brands=brands_list, result=result)
+    return render_template('category.html', brands=brands_list, text='You have searched for: ' + search_text, result=result)
 
 
 @app.route('/variable/<string:brand>')
@@ -73,7 +73,7 @@ def variable_page(brand):
 
     for document in cursor:
         result.append([document['date'], document['brand'], document['model'], document['rating'], document['proc'], document['price']])
-    return render_template('category.html', brands=brands_list, result=result)
+    return render_template('category.html', brands=brands_list, text='You have selected: ' + brand, result=result)
 
 
 # ~~~~~~~ PROPOSE PAGE ~~~~~~~

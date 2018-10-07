@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Page Title</title>
+<title>Filter Page</title>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
 <link rel= "stylesheet" type= "text/css" href= "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -20,11 +20,8 @@
 <div class="center border">
   <ul class="list">
     <li class="list-item"><a href="{{ url_for('home_page') }}">Home</a></li>
-
     <li class="list-item"><a href="{{ url_for('guide_page') }}">Guide</a></li>
-
     <li class="list-item"><a href="{{ url_for('deals_page') }}">Deals</a></li>
-
     <li class="list-item dropdown">
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
@@ -34,11 +31,8 @@
          {% endfor %}
       </div>
     </li>
-
     <li class="list-item"><a href="{{ url_for('propose_page') }}">Propose</a></li>
-
     <li class="list-item"><a href="{{ url_for('contact_page') }}">Contact</a></li>
-
   </ul>
 </div>
 
@@ -46,7 +40,6 @@
 <hr>
 <p class="center border" style="text-align: center">Some data filtering</p>
 <hr>
-
 <div class="center border">
   <h3 style="text-align: center;">Phones from trusted vendors</h3>
   <table id="table_id0" class="display compact color">
@@ -82,7 +75,6 @@
 </div>
 
 </body>
-
 <script>
 $(document).ready( function () {
     $('#table_id0').DataTable( {
@@ -102,9 +94,8 @@ $(document).ready( function () {
       "pageLength": 50,
       "scrollY": 200,
       "scrollCollapse": true,
-      "dom": 'ftp'
+      "dom": 'tp'
   } );
 } );
-
 </script>
 </html>

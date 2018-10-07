@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Page Title</title>
+<title>Guide Page</title>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
 </head>
 
@@ -17,11 +17,8 @@
 <div class="center border">
   <ul class="list">
     <li class="list-item"><a href="{{ url_for('home_page') }}">Home</a></li>
-
     <li class="list-item"><a href="{{ url_for('guide_page') }}">Guide</a></li>
-
     <li class="list-item"><a href="{{ url_for('deals_page') }}">Deals</a></li>
-
     <li class="list-item dropdown">
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
@@ -31,11 +28,8 @@
          {% endfor %}
       </div>
     </li>
-
     <li class="list-item"><a href="{{ url_for('propose_page') }}">Propose</a></li>
-
     <li class="list-item"><a href="{{ url_for('contact_page') }}">Contact</a></li>
-
   </ul>
 </div>
 
@@ -43,12 +37,11 @@
 <hr>
 <p class="center border" style="text-align: center">A comprehensive guide for you</p>
 <hr>
-
 <div class="center border" style="height: 460px">
-  <div class="content-split" style="font-size: 18px;"><br/>There are some key aspects in choosing a phone, which everyone should consider before buying one.<br/><br/>
-    Of course, the first things in mind are the user preferences and the actual purpose of the phone (business, outdoor resistant, etc.)<br/><br/>
-    I have created a list of those things, in the right-hand side of the screen, <span style="color: red;">from most important to least important</span>.<br/><br/>In my opinion,
-    the price should be the last, considering how powerful some cheap phones can get.
+  <div class="content-split" style="font-size: 18px;"><p>There are some key aspects in choosing a phone, which everyone should consider before buying one.</p>
+    <p>Of course, the first things in mind are the user preferences and the actual purpose of the phone (business, outdoor resistant, etc.)</p>
+    I have created a list of those things, in the right-hand side of the screen, <span style="color: red;">from most important to least important</span>.<p>In my opinion,
+    the price should be the last, considering how powerful some cheap phones can get.</p>
   </div>
   <div class="content-split">
     <h3>What to consider:</h3>
@@ -73,19 +66,55 @@
 <hr>
 <p class="center border" style="text-align: center">Majority is fine, but don't dive head first, you'll be surprised</p>
 <hr>
-
 <div class="center border">
   <div class="center2">
     <p class="content-text">
       Below you will find an image with the market share of the phones around us. Even though price, as said before, shouldn't impact your decision, these are the most bought phones.
-      If your income is steady and you don't really care how much you are going to spend on your phone, there are some safe bets for you.For example, you're not going to fail with the latest Samsung
-      or Apple devices, usually they have all the things needed in your day to day life. But of course, not everybody has 700-1000$ around to spend.<br/>
+      If your income is steady and you don't really care how much you are going to spend on your phone, there are some safe bets for you.
     </p>
-    <img src="{{ url_for('static', filename='market.png') }}" class="center-img" alt="" align="middle">
+    <p class="content-text">
+      For example, you're not going to fail with the latest Samsung
+      or Apple devices, usually they have all the things needed in your day to day life. But of course, not everybody has 700-1000$ around to spend.
+    </p>
+    <p><img src="{{ url_for('static', filename='market.png') }}" class="center-img" alt="" align="middle"></p>
   </div>
 </div>
 
-
+<hr>
+<p class="center border" style="text-align: center">Community support is crucial</p>
+<hr>
+<div class="center border">
+  <div class="center2">
+    <p class="content-text">
+      For me, the most important factor of all is good quality software. Many times, people would think that stuttering and the slowed down performance of their phones is coming from the hardware and the
+      inability of the ones that built the phone to make a proper job. Oh, and they are so wrong !
+    </p>
+    <p class="content-text">
+     Maintenance is the key to a future-proof, bug free software. That is why, people should look forward to 
+     coming into contact with developers from the community who are proving to efficiently improve the experience overall. And that is where, my favourite android devolpment mobile site comes in handy,
+     XDA Developers.
+    </p>
+    <p class="content-text">
+      It's a very active, friendly, and numerous community. There is so much to say about them, and I have little to no time to elaborate, so here I go into listing some advantages of becoming a custom operating system user:
+    </p>
+    <p></p>
+    <p class="content-text" style="background-color: lightcyan">
+      Teams of professionals that strive to bring the best out of your device. With a simple distro change (because that is what custom ROMs are, they are similar to linux distributions),
+      your device could become much better at performing</p>
+    <p class="content-text" style="background-color: lightcyan">
+      Improved stability, battery life, overall expeirence if you've picked the right ROM</p>
+    <p class="content-text" style="background-color: lightcyan">
+      Fixes specific for each phone, some of which not even manufactures have fixed (they tend to neglect the software life cycle and not update it for months/years/not at all)</p>
+    <p class="content-text" style="background-color: lightcyan">
+      Theme support and other tweaks to play around with</p>
+    <p class="content-text" style="background-color: lightcyan">
+      Many other useful stuff if you're willing to dwelve into the depths</p>
+    <br/>
+    <h4>Click on the image below to visit their site:</h4>
+    <a href="https://www.xda-developers.com/"><img src="{{ url_for('static', filename='xda.png') }}" class="center-img" alt="" align="middle"></a>
+  </div>
+  </div>
+</div>
 
 </body>
 </html>

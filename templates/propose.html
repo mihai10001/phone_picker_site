@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Page Title</title>
+<title>Propose Page</title>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
 </head>
 
@@ -17,11 +17,8 @@
 <div class="center border">
   <ul class="list">
     <li class="list-item"><a href="{{ url_for('home_page') }}">Home</a></li>
-
     <li class="list-item"><a href="{{ url_for('guide_page') }}">Guide</a></li>
-
     <li class="list-item"><a href="{{ url_for('deals_page') }}">Deals</a></li>
-
     <li class="list-item dropdown">
       <a href="javascript:void(0)" class="dropbtn">Brands</a>
       <div class="dropdown-content">
@@ -31,11 +28,8 @@
          {% endfor %}
       </div>
     </li>
-
     <li class="list-item"><a href="{{ url_for('propose_page') }}">Propose</a></li>
-
     <li class="list-item"><a href="{{ url_for('contact_page') }}">Contact</a></li>
-
   </ul>
 </div>
 
@@ -43,7 +37,6 @@
 <hr>
 <p class="center border" style="text-align: center">If you consider anything omitted, please complete the form below.<br/> After the algorithm checks for consistency, it will be added</p>
 <hr>
-
 <div class="center border">
   <div class="content-focus">
     <form method="POST">
