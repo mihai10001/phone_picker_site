@@ -29,14 +29,18 @@ def guide_page():
 @app.route('/filter')
 def deals_page():
     trusted_result = []
+    trusted_cheap_result = []
     brands_list = collection.distinct('brand')
-    trusted_vendors = ["Samsung", "Apple", "OnePlus", "Nokia", "Huaewi", "Xiaomi", "Google", "LG", "HTC", "Blackberry", "Sony"]
-    cursor = collection.find({"title": {"$in": trusted_vendors}})
+    trusted_vendors = ["Samsung", "Apple", "OnePlus", "Nokia", "Huawei", "Xiaomi", "Google", "LG", "HTC", "Blackberry", "Sony", "OPPO"]
+    cursor = collection.find({"brand": {"$in": trusted_vendors}})
 
     for document in cursor:
-        trusted_result.append([document['date'], document['brand'], document['model'], document['rating'], document['proc'], document['price']])
+        doc_atr = [document['date'], document['brand'], document['model'], document['rating'], document['proc'], document['price']]
+        trusted_result.append(doc_atr)
+        if document['price'] != '-' and int(document['price'].split(' ')[0]) <= 500:
+            trusted_cheap_result.append(doc_atr)
 
-    return render_template('filter.html', brands=brands_list, trusted=trusted_result)
+    return render_template('filter.html', brands=brands_list, trusted=trusted_result, trusted_cheap=trusted_cheap_result)
 
 
 # ~~~~~~~ VARIABLE PAGES [SEARCHBOX + BRANDS] ~~~~~~~

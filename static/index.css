@@ -17,6 +17,11 @@ width: 20%;
 color: lightgrey;
 }
 
+a {
+color: white;
+text-decoration: none;
+}
+
 .center {
 margin: 0 auto;
 margin-top: 10px;
@@ -109,6 +114,23 @@ border-radius: 50%;
 display: inline-block;
 }
 
+/*CSS for DataTables coloring, and other tables*/
+.dataTables_filter, .dataTables_length { margin-bottom:45px;}
+
+.dataTables_info, .dataTables_paginate { margin-top:45px; }
+
+.color td {
+text-align: center;
+}
+
+.color thead tr {
+background-color: orangered !important;
+}
+
+.color tbody tr:hover, .color tbody tr:hover td.sorting_1 {
+background-color: orange !important;
+}
+
 .simple {
 font-family: arial, sans-serif;
 border-collapse: collapse;
@@ -133,6 +155,7 @@ text-align: left;
 margin: 10px;
 }
 
+/*CSS for Submit Buttons*/
 .btn {
 border: 2px solid black;
 background-color: white;
@@ -152,7 +175,6 @@ color: #f44336;
 background: red;
 color: white;
 }
-
 
 /*CSS for MENU, DROPDOWN, SEARCHBAR*/
 .list {

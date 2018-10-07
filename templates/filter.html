@@ -12,7 +12,7 @@
 <body>
 <!-- THIS IS THE HEADER -->
 <div class="center border">
-  <h1 class="center border-other">Phones for everyone.</h1>
+  <h1 class="center border-other"><a href="{{ url_for('home_page') }}">Phones for everyone.</a></h1>
 </div>
 
 <!-- THIS IS THE MENU -->
@@ -43,9 +43,31 @@
 </div>
 
 <!-- THIS IS THE CONTENT -->
+<hr>
+<p class="center border" style="text-align: center">Some data filtering</p>
+<hr>
+
+<div class="center border">
+  <h3 style="text-align: center;">Phones from trusted vendors</h3>
+  <table id="table_id0" class="display compact color">
+      <thead>
+          <tr>
+              <th>Release date</th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Rating</th>
+              <th>Processor</th>
+              <th>Price</th>
+          </tr>
+      </thead>
+  </table>
+</div>
+
+<br/>
 <br/>
 <div class="center border">
-  <table id="table_id" class="display">
+  <h3 style="text-align: center;">Phones from trusted vendors( <= 500 $ )</h3>
+  <table id="table_id1" class="display compact color">
       <thead>
           <tr>
               <th>Release date</th>
@@ -63,9 +85,24 @@
 
 <script>
 $(document).ready( function () {
-    $('#table_id').DataTable( {
-      "data":{{ trusted|tojson }},
-      "order": [[ 0, "desc" ]]
+    $('#table_id0').DataTable( {
+      "data": {{ trusted|tojson }},
+      "order": [[ 0, "desc" ]],
+      "pageLength": 50,
+      "scrollY": 200,
+      "scrollCollapse": true,
+      "dom": 'tp'
+  } );
+} );
+
+$(document).ready( function () {
+    $('#table_id1').DataTable( {
+      "data": {{ trusted_cheap|tojson }},
+      "order": [[ 0, "desc" ]],
+      "pageLength": 50,
+      "scrollY": 200,
+      "scrollCollapse": true,
+      "dom": 'ftp'
   } );
 } );
 
