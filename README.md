@@ -6,7 +6,7 @@ Specification for the project:
 
 Languages used: Python, HTML, CSS, JS<br/>
 Applications used: Flask, MongoDB, DataTables<br/>
-Separate projects : Scraper for populating database [by me](https://www.github.com/mihai10001/scrap)<br/>
+Separate projects : [Scraper] for populating database (https://www.github.com/mihai10001/scrap)<br/>
 
 
 - A local Database, preferably using a NOSQL approach, and for which I chose MongoDB. (others include CouchDB, CouchBase, etc.)
@@ -21,3 +21,5 @@ Separate projects : Scraper for populating database [by me](https://www.github.c
 
 <br/><br/>
 More information about the project on the Home Page and pictures of the website linked below:
+https://imgur.com/a/F9Qmmen
+
