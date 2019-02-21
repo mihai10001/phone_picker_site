@@ -1,5 +1,9 @@
 # Web Application Project
 
+This is a project to showcase some Flask capabilities, basic user interactions, nothing serious.
+It is a sample website that will guide you towards choosing a phone, which features to take into consideration and other guidelines.
+Database can be built using the [Scraper](https://www.github.com/mihai10001/scrap) I created, altough I don't encourage using it.
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Specification for the project:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
